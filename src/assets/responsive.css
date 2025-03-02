@@ -1,0 +1,79 @@
+/* Mobile Responsive Styles For Home Page */
+@media (max-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .overlay-container {
+        width: 55%; 
+    }
+
+    .text-content h1{
+        line-height: 50px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(1, 1fr); 
+        grid-auto-rows: 650px; 
+    }
+    .grid-item img {
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .booknow-empty {
+        width: 15%;
+    }
+
+    .booknow-introduction {
+        width: 85%;
+        text-align: right;
+    }
+
+
+}
+
+
+@media (max-width:400px){
+    .our-service-title h4 {
+        font-size: 18px;
+        
+    }
+
+    .testimonial-title h4 {
+        font-size: 18px;
+        
+    }
+      
+
+    .booknow-empty {
+        width: 5%;
+    }
+
+    .booknow-introduction {
+        width: 95%;
+        text-align: right;
+    }
+
+    .profile-pic {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .testimonial-card {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .testimonial-content h3 {
+        font-size: 18px;
+        margin-top: -5px;
+    }
+
+    .booknow-introduction span {
+        font-size: 18px;
+    }
+}
