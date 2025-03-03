@@ -18,7 +18,7 @@ const toggleDropdown = () => {
     <header>
         <div class="navigation">
             <div class="header-logo">
-               <img src="../../images/logo.jpg">
+               <img src="/images/logo.jpg">
             </div>
             <div class="header-menu" :class="{ open: isMenuOpen }">
                <ul >
