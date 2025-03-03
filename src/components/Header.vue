@@ -18,7 +18,9 @@ const toggleDropdown = () => {
     <header>
         <div class="navigation">
             <div class="header-logo">
-               <img src="/images/logo.jpg">
+              <router-link to="/">
+                 <img src="/images/logo.jpg">
+              </router-link>   
             </div>
             <div class="header-menu" :class="{ open: isMenuOpen }">
                <ul >
@@ -152,7 +154,7 @@ ul.dropdown-menu {
 .dropdown-menu li a {
   color: white;
   display: block;
-  font-size: 12.5px;
+  font-size: 14px;
 }
 
 .dropdown-menu li a:hover {
@@ -181,11 +183,14 @@ ul.dropdown-menu {
 
 /* Mobile Responsive Styles */
 @media (max-width: 992px) {
+  .navigation {
+        padding: 10px;
+    }
   .header-menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 52px;
+    top: 55px;
     /* right: 0; */
     background: white;
     padding: 20px 0px;
@@ -225,9 +230,7 @@ ul.dropdown-menu {
     transition: none;
   }
    
-  ul.dropdown-menu {
-    margin-left: 20px;
-  }
+  
 
   .dropdown-menu li a {
       color: black !important;

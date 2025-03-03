@@ -318,8 +318,13 @@ onUnmounted(() => {
             class="testimonial-slider"
           >
           <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
+            <div class="mobile-testimonial">
+              <img :src="testimonial.image" alt="Testimonial" id="profile-pic" />
+            </div>
             <div class="testimonial-card">
-              <img :src="testimonial.image" alt="Testimonial" class="profile-pic" />
+              <div class="desktop-testimonial">
+                <img :src="testimonial.image" alt="Testimonial" class="profile-pic" />
+              </div>
               <div class="testimonial-content">
                 <h3>{{ testimonial.name }}</h3>
                 <h4>{{ testimonial.role }}</h4>

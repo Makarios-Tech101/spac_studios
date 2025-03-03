@@ -182,4 +182,33 @@
     grid-column: 1 / span 2;
     
 } */
+
+@media (max-width:992px) {
+   .footer-container {
+        display: flex; 
+        flex-direction: column;
+   }
+
+   .footer-container h4 {
+       margin-bottom: 10px;
+    }
+
+   .footer-about-container {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+   .quicklink-container {
+        width: 100%;
+    }
+
+    .instagram-container {
+        width: 100%;
+    }
+
+    .copyright-container p {
+        font-size: 10px;
+    }
+
+}
 </style>
