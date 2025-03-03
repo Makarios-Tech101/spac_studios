@@ -15,7 +15,6 @@ export default defineConfig({
     vue(),
     // vueDevTools(),
   ],
-  base: "/Makarios-Tech101.github.io/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
