@@ -25,10 +25,10 @@
                         <router-link to="/about-us">About Us</router-link>
                     </li>
                     <li>
-                        <router-link to="/#">Wedding</router-link>
+                        <router-link to="/#">Birthday Shoot</router-link>
                     </li>
                     <li>
-                        <router-link to="/gallery">Portrait</router-link>
+                        <router-link to="/gallery">Gallery</router-link>
                     </li>
                     <li>
                         <router-link to="/blog">Blog</router-link>

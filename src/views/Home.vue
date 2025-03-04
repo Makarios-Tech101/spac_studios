@@ -118,10 +118,12 @@ const gallerySlides = ref([
   { img: "/images/img8.jpg" },
   { img: "/images/service1.jpg" },
   { img: "/images/img11.jpg" },
+  { img: "/images/img14.jpg" },
   { img: "/images/service4.jpg" },
   { img: "/images/jpeg-optimizer_banner-img1.jpg" },
   { img: "/images/img_book.jpg" },
-  { img: "/images/product.jpg" }
+  { img: "/images/product.jpg" },
+  { img: "/images/img17.jpg" },
 ]);
 
 
@@ -150,41 +152,44 @@ onMounted(() => {
 const pricingOptions = ref([
   {
     title: "Lite Package",
-    price: "£99",
+    // price: "£99",
     description: [
       "- 1 Hour Shoot ",
       "- 1 Cloth ",
       "- 3 Hi-Res Retouched Images ",
       "- Styling & Posing gGide",
-      "- One person"
+      "- One person",
+      "- £99"
     ],
   },
   {
     title: "Classic Package",
-    price: "£150",
+    // price: "£150",
     description: [
       "- 1-2 Hour Shoot",
       "- 2 Cloth Change",
       "- 7 Hi-Res Retouched Images ",
       "- Styling & Posing gGide",
-      "- Up To 2 Persons"
+      "- Up To 2 Persons",
+      "- £150"
     ],
   },
   {
     title: "Deluxe Package",
-    price: "£250",
+    // price: "£250",
     description: [
       "- 2 Hours Shoot",
       "- 3 Cloth Change",
       "- 12 Hi-Res Retouched Images ",
       "- Styling & Posing gGide",
       "- Up To 4 Persons",
-      "- £30 for every additional person"
+      "- £30 for every additional person",
+      "- £250",
     ],
   },
   {
     title: "Event Package",
-    price: "",
+    // price: "",
     description: [
       "- 1st Hour £150",
       "- 15 Edited Photos Per Hour",
@@ -193,7 +198,7 @@ const pricingOptions = ref([
   },
   {
     title: "Other Charges ",
-    price: "",
+    // price: "",
     description: [
       "- Travel Fee For Home Shoot - Beyond 10 Mile Radius",
       "- Studio Rental Charges",
@@ -410,7 +415,8 @@ onUnmounted(() => {
             <div class="pricing-accordion">
               <div v-for="(option, index) in pricingOptions" :key="index" class="accordion-item">
                 <div class="accordion-header" @click="toggleAccordion(index)">
-                  <h3>{{ option.title }} <span class="price">{{ option.price }}</span></h3>
+                  <!-- <h3>{{ option.title }} <span class="price">{{ option.price }}</span></h3> -->
+                  <h3>{{ option.title }}</h3>
                   <span class="icon">{{ activeIndex === index ? "-" : "+" }}</span>
                 </div>
                 <div class="accordion-content" v-if="activeIndex === index">

@@ -22,38 +22,40 @@ const toggleDropdown = () => {
                  <img src="/images/logo.jpg">
               </router-link>   
             </div>
-            <div class="header-menu" :class="{ open: isMenuOpen }">
-               <ul >
-                  <li>
-                    <router-link to="/">Home</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/about-us">About Us</router-link>
-                  </li>
-                  <li class="dropdown" >
-                    <router-link to="/#"  @click.prevent="toggleDropdown"> Our Services <span style="font-size: 15px;">&#x2BC6;</span>  </router-link>
-                    <ul class="dropdown-menu" :class="{ 'open': isDropdownOpen }">
-                        <li class="dropdown-item"><router-link to="/portraits-and-headshots">Portraits and Headshots</router-link></li>
-                        <li class="dropdown-item"><router-link to="/wedding-and-events">Wedding and Events</router-link></li>
-                        <li class="dropdown-item"><router-link to="/birthday-shoots">Birthday Shoots</router-link></li>
-                        <li class="dropdown-item"><router-link to="/child-photography">Child Photography</router-link></li>
-                        <li class="dropdown-item"><router-link to="/corporate-events">Corporate Events</router-link></li>
-                        <li class="dropdown-item"><router-link to="/fashion-photography">Fashion Photography</router-link></li>
-                        <li class="dropdown-item"><router-link to="/outdoor-shoots">Outdoor Shoots</router-link></li>
-                        <li class="dropdown-item"><router-link to="/birthday-shoots">Product Photography</router-link></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <router-link to="/gallery">Gallery</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/blog">Blog</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/contact">Contact & Bookings</router-link>
-                  </li>
-               </ul>
-            </div>
+            <Transition name="slide-fade">
+              <div class="header-menu" :class="{ open: isMenuOpen }" >
+                <ul >
+                    <li>
+                      <router-link to="/">Home</router-link>
+                    </li>
+                    <li>
+                      <router-link to="/about-us">About Us</router-link>
+                    </li>
+                    <li class="dropdown" >
+                      <router-link to="/#"  @click.prevent="toggleDropdown"> Our Services <span style="font-size: 15px;">&#x2BC6;</span>  </router-link>
+                      <ul class="dropdown-menu" :class="{ 'open': isDropdownOpen }">
+                          <li class="dropdown-item"><router-link to="/portraits-and-headshots">Portraits and Headshots</router-link></li>
+                          <li class="dropdown-item"><router-link to="/wedding-and-events">Wedding and Events</router-link></li>
+                          <li class="dropdown-item"><router-link to="/birthday-shoots">Birthday Shoots</router-link></li>
+                          <li class="dropdown-item"><router-link to="/child-photography">Child Photography</router-link></li>
+                          <li class="dropdown-item"><router-link to="/corporate-events">Corporate Events</router-link></li>
+                          <li class="dropdown-item"><router-link to="/fashion-photography">Fashion Photography</router-link></li>
+                          <li class="dropdown-item"><router-link to="/outdoor-shoots">Outdoor Shoots</router-link></li>
+                          <li class="dropdown-item"><router-link to="/birthday-shoots">Product Photography</router-link></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <router-link to="/gallery">Gallery</router-link>
+                    </li>
+                    <li>
+                      <router-link to="/blog">Blog</router-link>
+                    </li>
+                    <li>
+                      <router-link to="/contact">Contact & Bookings</router-link>
+                    </li>
+                </ul>
+              </div>
+            </Transition>
                  <!-- Mobile Menu Toggle -->
             <button class="menu-toggle" @click="toggleMenu">
                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"><path fill="#000" d="M3.563 6a.75.75 0 0 1 .75-.75h16a.75.75 0 0 1 0 1.5h-16a.75.75 0 0 1-.75-.75m0 12a.75.75 0 0 1 .75-.75h16a.75.75 0 0 1 0 1.5h-16a.75.75 0 0 1-.75-.75m.75-6.75a.75.75 0 0 0 0 1.5h16a.75.75 0 0 0 0-1.5z"/>
@@ -87,9 +89,10 @@ header {
 /* Logo */
 .header-logo img {
   width: 150px;
+  margin-bottom: -10px;
 }
 
-/* Main Navigation */
+
 .header-menu ul {
   display: flex;
 }
@@ -104,7 +107,7 @@ header {
   text-decoration: none;
   color: black;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.4px;
 }
@@ -112,6 +115,7 @@ header {
 .header-menu ul a:hover {
   color: grey;
 }
+
 
 /* Dropdown Menu */
 .dropdown {
@@ -137,6 +141,7 @@ ul.dropdown-menu {
   padding: 10px 0;
   margin-top: 15px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .dropdown-menu .dropdown-item {
@@ -161,6 +166,10 @@ ul.dropdown-menu {
   color: rgb(203, 203, 203);
 }
 
+.dropdown-menu.open {
+  display: block; /* Show when toggled */
+}
+
 /* .dropdown:hover .dropdown-menu {
   display: block;
 } */
@@ -172,8 +181,26 @@ ul.dropdown-menu {
   border: none;
   cursor: pointer;
   font-size: 24px;
+  margin-bottom: -10px;
 }
 
+/* Transition for mobile menu */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.slide-fade-enter-to,
+.slide-fade-leave-from {
+  transform: translateY(0);
+  opacity: 1;
+}
 
 @media (min-width: 993px) {
   .dropdown:hover .dropdown-menu {
@@ -190,7 +217,7 @@ ul.dropdown-menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 55px;
+    top: 44px;
     /* right: 0; */
     background: white;
     padding: 20px 0px;
