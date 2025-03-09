@@ -83,13 +83,59 @@
     .contact-details {
         width: 100%;
         text-align: center;
-        padding: 20px 0px;
+        padding: 20px 20px;
+        box-sizing: border-box;
     }
 
+    /* PORTRAITS AND HEADSHOTS */
+    .individual-services-banner-section {
+        padding: 70px 0px 80px 0px;
+        background-position: 100% 110%;
+        
+    }
+    
+    .our-services-gallery-grid-container {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-auto-rows: 300px; 
+    }
+    .our-services-gallery-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .individual-services-banner-content {
+        width: 100%;
+    }
+    
+    /* ABOUT US PAGE */
+    .aboutus-container {
+        display: flex;
+        flex-direction: column;
+        /* margin: 0px auto; */
+        align-items: flex-start;
+        /* width: 90%; */
+    }
+
+    .about-us-text {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    .aboutus-section .about-us-image {
+        text-align: center;
+        width: 100%;
+        margin-top: 40px;
+     }
 }
 
 
 @media (max-width:400px){
+    .text-content h1{
+        line-height: 35px;
+        font-size: 40px;
+    }
     .our-service-title h4 {
         font-size: 18px;
         
@@ -98,6 +144,16 @@
     .service-grid {
         grid-template-columns: repeat(1, 1fr); 
         grid-auto-rows: 450px; 
+    }
+
+    .our-services-gallery-title h4 {
+        font-size: 18px;
+        
+    }
+
+    .our-services-gallery-grid-container {
+        grid-template-columns: repeat(1, 1fr); 
+        grid-auto-rows: 440px; 
     }
 
     .testimonial-title h4 {

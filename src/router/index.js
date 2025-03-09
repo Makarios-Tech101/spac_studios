@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue';
 import Gallery from '../views/Gallery.vue';
-import Blog from '../views/Blog.vue';
+import Pricing from '@/views/Pricing.vue';
 import Contact from '../views/Contact.vue';
 import PortraitsAndHeadshots from '../views/OurServices/PortraitsAndHeadshots.vue';
 import WeddingAndEvents from '../views/OurServices/WeddingAndEvents.vue';
@@ -32,9 +32,9 @@ const router = createRouter({
       component: Gallery,
     },
     {
-      path: '/blog',
-      name: 'blog',
-      component: Blog,
+      path: '/pricing',
+      name: 'pricing',
+      component: Pricing,
     },
     {
       path: '/contact',

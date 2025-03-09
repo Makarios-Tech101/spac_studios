@@ -31,7 +31,7 @@
                         <router-link to="/gallery">Gallery</router-link>
                     </li>
                     <li>
-                        <router-link to="/blog">Blog</router-link>
+                        <router-link to="/pricing">Pricing</router-link>
                     </li>
                     <li>
                         <router-link to="/contact">Contact & Bookings</router-link>
@@ -52,10 +52,10 @@
                             <img src="/images/service1-c.jpg" id="img3">
                     </a>     
                     <a href= "https://www.instagram.com/spac_studios?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                            <img src="/images/img2.jpg">
+                            <img src="/images/img3.jpg">
                     </a>     
                     <a href= "https://www.instagram.com/spac_studios?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                            <img src="/images/img1.jpg" id="img5">
+                            <img src="/images/img20.jpg" id="img5">
                     </a>     
                     <a href= "https://www.instagram.com/spac_studios?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
                             <img src="/images/banner-img3.jpg" id="img5">

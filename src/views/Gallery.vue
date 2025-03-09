@@ -3,45 +3,57 @@ import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import '../assets/main.css';
 import { ref,  watchEffect, onMounted, onUnmounted } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
+// import { Swiper, SwiperSlide } from "swiper/vue";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/effect-fade";
+// import "swiper/css/navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 
 const galleries = ref([
-  "/images/service1.jpg",
-  "/images/jpeg-optimizer_banner-img1.jpg",
-  "/images/img7.jpg",
-  "/images/img1.jpg",
-  "/images/service4.jpg",
-  // "/images/img3.jpg",
-  "/images/service2.jpg",
-  "/images/banner-img3.jpg",
-  "/images/img6.jpg",
-  "/images/img2.jpg",
-  "/images/service3.jpg",
-  // "/images/service5.jpg",
-  "/images/service6.jpg",
-  "/images/jpeg-optimizer_banner-img2.jpg",
-  "/images/img4.jpg",
-  // "/images/img6.jpg",
-  "/images/banner-img3.jpg",
-  "/images/service4.jpg",
+  { src: "/images/service1.jpg", title: "Birthday Shoot" },
+  { src: "/images/jpeg-optimizer_banner-img1.jpg", title: "Headshot" },
+  { src: "/images/banner-img5.jpg", title: "Studio Shoot" },
+  { src: "/images/img1.jpg", title: "Event Shoot" },
+  { src: "/images/img18.jpg", title: "Family Portrait" },
+  { src: "/images/img19.jpg", title: "Child Photography" },
+  { src: "/images/img20.jpg", title: "Child Photography" },
+  { src: "/images/img_book.jpg", title: "Fashion Photography" },
+  { src: "/images/service2.jpg", title: "Child Photography" },
+  { src: "/images/banner-img3.jpg", title: "Event Shoot" },
+  { src: "/images/img11.jpg", title: "Studio Shoot" },
+  { src: "/images/img8.jpg", title: "Fashion Photography" },
+  { src: "/images/img12.jpg", title: "Studio Shoot" },
+  { src: "/images/img14.jpg", title: "Birthday Shoot" },
+  { src: "/images/img15.jpg", title: "Birthday Shoot" },
+  { src: "/images/img17.jpg", title: "Birthday Shoot" },
+  { src: "/images/img21.jpg", title: "Child Photography" },
+  { src: "/images/img2.jpg", title: "Family Portrait" },
+  { src: "/images/service3.jpg", title: "Child Photography" },
+  { src: "/images/service6.jpg", title: "Outdoor Shoot" },
+  { src: "/images/img4.jpg", title: "Family Portrait" },
+  { src: "/images/jpeg-optimizer_banner-img2.jpg", title: "Child(ren) Photography" },
+  { src: "/images/img4.jpg", title: "Family Portrait" },
+  { src: "/images/img9.jpg", title: "Fashion Photography" },
+  { src: "/images/img10.jpg", title: "Fashion Photography" },
+  
 ]);
 
+
 const selectedImage = ref(null);
+const selectedTitle = ref(null);
 const showScrollTop = ref(false);
 
 const openModal = (image) => {
-  selectedImage.value = image;
+  selectedImage.value = image.src;
+  selectedTitle.value = image.title;
 };
 
 const closeModal = () => {
   selectedImage.value = null;
+  selectedTitle.value = null;
 };
 
 onMounted(() => {
@@ -89,7 +101,8 @@ onUnmounted(() => {
                     <img 
                     v-for="(gallery, index) in galleries" 
                     :key="index"
-                    :src="gallery" 
+                    :src="gallery.src" 
+                    :alt="gallery.title"
                     alt="Gallery Image" 
                     class="gallery-item" 
                     @click="openModal(gallery)"
@@ -104,7 +117,12 @@ onUnmounted(() => {
         <div v-if="selectedImage" class="modal" @click="closeModal">
             <div class="modal-content" @click.stop>
                 <button class="close-button" @click="closeModal">&times;</button>
-                <img :src="selectedImage" alt="Modal Image" class="modal-image">
+                <img 
+                  :src="selectedImage" 
+                  alt="Modal Image" 
+                  class="modal-image"
+                >
+                <h3 class="modal-title">{{ selectedTitle }}</h3> 
             </div>
         </div>
         <div>

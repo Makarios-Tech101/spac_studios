@@ -401,6 +401,10 @@ body {
   align-items: center;
 }
 
+.modal-content h3 {
+  margin: 0px;
+}
+
 .modal-image {
   /* width: 350px; */
   overflow-y: auto;
@@ -611,6 +615,11 @@ body {
   border-top: 1px solid #ddd;
 }
 
+.accordion-content a {
+  color:#333;
+  text-decoration: none;
+}
+
 .accordion-content ul {
   padding-left: 20px;
 }
@@ -706,7 +715,7 @@ body {
 }
 
 .whatsapp-button img {
-    width: 70px; /* Adjust size */
+    width: 50px; /* Adjust size */
     height: auto;
     cursor: pointer;
 }
@@ -728,6 +737,210 @@ body {
 }
 
 
+
+/* DROPDOWN SERVICES PAGE */
+/* 
+.our-services-gallery-section {
+  margin: 100px auto 20px auto;
+  width: 90%;
+} */
+
+.our-services-gallery-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px auto;
+  padding-bottom: 40px;
+  width: 90%;
+}
+
+.our-services-gallery-title h4 {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 25px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+.our-services-gallery-title h4:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 130px;
+  background-color: #111;
+}
+
+.our-services-gallery-title h4:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  height: 0.5px;
+  width: 95%;
+  max-width: 230px;
+  background-color: #333;
+}
+
+#our-services-gallery {
+  width: 90%;
+  margin: 0px auto;
+}
+
+.our-services-gallery-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+  grid-auto-rows: 400px; /* Adjust height */
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.our-services-gallery-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.our-services-gallery-grid img {
+   width: 100%;
+  height: 100%; 
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.our-services-gallery-grid:hover img {
+  transform: scale(1.05);
+}
+
+
+.individual-services-banner-section {
+  padding: 100px 0px 80px 0px;
+  background-image: url(../../images/background-design2.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  
+}
+
+.individual-services-banner-container {
+  margin: 0px auto;
+  width: 90%;
+}
+
+.individual-services-banner-content {
+  width: 60%;
+}
+
+.individual-services-banner-content  p{
+  font-size: 15px;
+  line-height: 24px;
+  margin-top: 0px;
+}
+
+.individual-services-banner-content #second-paragraph {
+  margin-bottom: 40px;
+}
+
+.individual-services-banner-content a {
+  background-color: black;
+  color: #ffffff;
+  font-size: 14px;
+  border: 1px solid white;
+  padding: 10px 20px;
+  cursor: pointer;
+  /* margin-top: 40px; */
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+}
+.individual-services-banner-content button:hover {
+  background-color: transparent;
+  color: black;
+  font-size: 14px;
+  border: 1px solid black;
+}
+
+
+/* ABOUT US PAGE */
+.aboutus-section {
+  margin-bottom: 70px;
+}
+.aboutus-section .about-us-image img {
+   width: 450px;
+   /* border-right: 15px solid black; */
+}
+
+.aboutus-container {
+  display: flex;
+  align-items: center;
+  margin: 0px auto;
+  width: 90%;
+}
+
+.about-us-text {
+  width: 60%;
+  padding-right: 90px;
+}
+
+.about-us-text p{
+  margin-top: 0px;
+  font-size: 15px;
+  line-height: 25px;
+  color: #333;
+}
+
+.about-us-text h2{
+  margin-bottom: 5px;
+}
+
+.page-section {
+  margin: 100px auto 20px auto;
+  width: 90%;
+}
+
+.page-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title h4 {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 25px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.page-title h4:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 55px;
+  background-color: #111;
+}
+
+.page-title h4:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  height: 0.5px;
+  width: 95%;
+  max-width: 190px;
+  background-color: #333;
+}
 
 
 @media (max-width: 1024px) {

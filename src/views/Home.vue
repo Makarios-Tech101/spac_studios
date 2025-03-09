@@ -420,9 +420,11 @@ onUnmounted(() => {
                   <span class="icon">{{ activeIndex === index ? "-" : "+" }}</span>
                 </div>
                 <div class="accordion-content" v-if="activeIndex === index">
-                  <ul>
-                    <li v-for="(item, i) in option.description" :key="i">{{ item }}</li>
-                  </ul>
+                  <router-link to="/pricing">
+                    <ul>
+                       <li v-for="(item, i) in option.description" :key="i">{{ item }}</li>
+                    </ul>
+                  </router-link>
                 </div>
               </div>
             </div>

@@ -32,7 +32,7 @@ const toggleDropdown = () => {
                       <router-link to="/about-us">About Us</router-link>
                     </li>
                     <li class="dropdown" >
-                      <router-link to="/#"  @click.prevent="toggleDropdown"> Our Services <span style="font-size: 15px;">&#x2BC6;</span>  </router-link>
+                      <a href="#"  @click.prevent="toggleDropdown"> Our Services <span style="font-size: 15px;">&#x2BC6;</span>  </a>
                       <ul class="dropdown-menu" :class="{ 'open': isDropdownOpen }">
                           <li class="dropdown-item"><router-link to="/portraits-and-headshots">Portraits and Headshots</router-link></li>
                           <li class="dropdown-item"><router-link to="/wedding-and-events">Wedding and Events</router-link></li>
@@ -41,14 +41,14 @@ const toggleDropdown = () => {
                           <li class="dropdown-item"><router-link to="/corporate-events">Corporate Events</router-link></li>
                           <li class="dropdown-item"><router-link to="/fashion-photography">Fashion Photography</router-link></li>
                           <li class="dropdown-item"><router-link to="/outdoor-shoots">Outdoor Shoots</router-link></li>
-                          <li class="dropdown-item"><router-link to="/birthday-shoots">Product Photography</router-link></li>
+                          <li class="dropdown-item"><router-link to="/product-photography">Product Photography</router-link></li>
                       </ul>
                     </li>
                     <li>
                       <router-link to="/gallery">Gallery</router-link>
                     </li>
                     <li>
-                      <router-link to="/blog">Blog</router-link>
+                      <router-link to="/pricing">Pricing</router-link>
                     </li>
                     <li>
                       <router-link to="/contact">Contact & Bookings</router-link>
@@ -236,6 +236,7 @@ ul.dropdown-menu {
 
   .header-menu .dropdown-menu{
     gap: 0px;
+    margin-left: -10px;
   }
 
   .menu-toggle {
@@ -243,6 +244,7 @@ ul.dropdown-menu {
   }
   .header-menu ul {
     flex-direction: column;
+    padding-left: 10px;
   }
 
   .dropdown-menu {
